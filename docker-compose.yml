@@ -1,0 +1,15 @@
+version: "3.6"
+
+services:
+  ssr:
+    image: registrys/ssr:latest
+    container_name: ssr
+    network_mode: "host"
+    volumes:
+      - "./etc/config.json:/app/config.json:ro"
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200m"
+        max-file: "10"
