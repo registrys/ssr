@@ -6,7 +6,7 @@ services:
     container_name: ssr
     network_mode: "host"
     volumes:
-      - "./etc/config.json:/app/config.json:ro"
+      - "./config/config.json:/app/config.json:ro"
     restart: unless-stopped
     logging:
       driver: "json-file"
